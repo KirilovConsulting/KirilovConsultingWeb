@@ -5,8 +5,8 @@
       style="background-image: url('img/landing.jpg');"
     >
       <div style="position: relative" class="ml-md-5 row pt-5">
-        <div class="offset-1 col-lg-3 col-md-5 col-12 text-center display-4 display-md-2 text-white">
-          Kirilov Consulting
+        <div class="offset-1 col-lg-3 col-md-5 col-12 text-center display-2 display-md-2 text-white">
+          Kirilov Consult
           <!-- <img
             src="~/assets/logoWhite.svg"
             class="navbar-brand-img img-fluid logo"
