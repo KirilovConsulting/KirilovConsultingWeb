@@ -41,7 +41,16 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/toast',
+    '@nuxtjs/axios'
   ],
+  toast: {
+    position: 'top-center',
+    duration: 2000
+  },
+  axios: {
+    // proxyHeaders: false
+  },
   /*
   ** Build configuration
   */

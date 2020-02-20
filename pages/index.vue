@@ -5,7 +5,9 @@
       style="background-image: url('img/landing.jpg');"
     >
       <div style="position: relative" class="ml-md-5 row pt-5">
-        <div class="offset-1 col-lg-3 col-md-5 col-12 text-center display-2 display-md-2 text-white">
+        <div
+          class="offset-1 col-lg-3 col-md-5 col-12 text-center display-2 display-md-2 text-white"
+        >
           Kirilov Consult
           <!-- <img
             src="~/assets/logoWhite.svg"
@@ -36,14 +38,19 @@
                     v-model="email"
                     class="input100 placeholder0 s1-txt1"
                     type="text"
-                    name="email"
+                    name="_replyto"
                     placeholder="Email"
                   />
                   <span class="focus-input100" />
                 </div>
 
-                <button class="btn btn-secondary" @click="subscribe">Subscribe</button>
+                <button class="btn btn-secondary" type="submit" @click="subscribe">Subscribe</button>
               </form>
+              <!-- <form >
+                <input type="text" clas name="name" />
+                <input type="email" name="_replyto" />
+                <input type="submit" value="Send" />
+              </form>-->
               <div>
                 <div class="card-text small text-muted mt-3">And don’t worry, we hate spam too!</div>
                 <div class="card-text small text-muted">You can unsubcribe at anytime.</div>
@@ -65,34 +72,31 @@ export default {
     FlipCountdown
   },
   layout(context) {
-    if (context.route.name === 'maintenance') {
-      this.maintenance = true;
-      return 'maintenance';
-    } else return 'header';
-  },
-  props: {
-    error: {
-      type: Object,
-      default: null
-    }
+    return 'header';
   },
   data() {
     return {
-      email: '',
-      maintenance: true,
-      message: ''
+      email: ''
     };
   },
   methods: {
+    validateEmail(email) {
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    },
     subscribe(e) {
       e.preventDefault();
 
-      if (this.email === '') {
-        this.$toast.error('Please fill your email 💥');
+      if (!validateEmail(this.email)) {
+        this.$toast.error('Please enter correct email 💥');
         return;
       }
 
-      this.$toast.success('You were subscribed 📬');
+      this.$axios.post('https://formspree.io/mvorogja', {
+        _replyto: this.email
+      });
+
+      this.$toast.success('Successfully subscribed! 📬');
     }
   }
 };
