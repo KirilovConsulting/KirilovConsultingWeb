@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Rubik-Bold
+font link: https://fonts.google.com/specimen/Rubik
+font author: Hubert and Fischer
+font author site: http://hubertfischer.com/
+
+
+icon designer: Cengiz SARI
+icon designer link: /cengizsari
+        
+{"bg-gradient-0":"#49247E","bg-gradient-1":"#AA49C7","icon":"#ffffff","font":"#ffffff","slogan":"#ffffff"}
+      

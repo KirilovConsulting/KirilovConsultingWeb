@@ -6,24 +6,29 @@
     >
       <div style="position: relative" class="ml-md-5 row pt-5">
         <div
-          class="offset-1 col-lg-3 col-md-5 col-12 text-center display-2 display-md-2 text-white"
+          class="col-md-5 col-12 text-center display-2 display-md-2 d-flex"
         >
-          Kirilov Consult
-          <!-- <img
-            src="~/assets/logoWhite.svg"
-            class="navbar-brand-img img-fluid logo"
+            <!-- src="/logo/vector/default-monochrome.svg" -->
+          <img
+            src="/img/logo.png"
+            class="navbar-brand-img d-none d-sm-block logo"
             alt="Advisor Live"
-          />-->
+          />
+          <img
+            src="/logo/vector/isolated-monochrome-white.svg"
+            class="navbar-brand-img img-fluid "
+            alt="Advisor Live"
+          />
         </div>
       </div>
 
       <div class="row text-center content">
         <div class="col-12 col-md-6 mb-5 pb-5">
-          <h1 class="text-white display-1 ml-3 mt-4">Coming Soon</h1>
+          <h1 class="text-white display-3 ml-3 mt-4">Coming Soon</h1>
 
           <div>
             <client-only>
-              <flip-countdown deadline="2020-03-01 00:00:00" />
+              <flip-countdown :deadline="deadlineDate" />
             </client-only>
           </div>
         </div>
@@ -79,6 +84,19 @@ export default {
       email: ''
     };
   },
+  computed: {
+    deadlineDate: () => {
+      var deadline = new Date();
+
+      if (deadline.getMonth() == 11) {
+        deadline.setYear(deadline.getYear() + 1)
+        deadline.setMonth(0)
+      } else {
+        deadline.setMonth(deadline.getMonth() + 1)
+      }
+      return deadline.toDateString()
+    }
+  },
   methods: {
     validateEmail(email) {
       var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -87,7 +105,7 @@ export default {
     subscribe(e) {
       e.preventDefault();
 
-      if (!validateEmail(this.email)) {
+      if (!this.validateEmail(this.email)) {
         this.$toast.error('Please enter correct email 💥');
         return;
       }
@@ -114,7 +132,7 @@ export default {
   }
 }
 .logo {
-  width: 50%;
+  width: 100px;
 }
 .navbar {
   background-color: transparent;
