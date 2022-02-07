@@ -12,56 +12,20 @@
           <img
             src="/img/logo.png"
             class="navbar-brand-img d-none d-sm-block logo"
-            alt="Advisor Live"
+            alt="Kirilov Consulting"
           />
           <img
             src="/logo/vector/isolated-monochrome-white.svg"
-            class="navbar-brand-img img-fluid "
-            alt="Advisor Live"
+            class="navbar-brand-img img-fluid logo-text"
+            alt="Kirilov Consulting"
           />
         </div>
       </div>
 
-      <div class="row text-center content">
+      <div class="row text-center content d-flex justify-content-center">
         <div class="col-12 col-md-6 mb-5 pb-5">
-          <h1 class="text-white display-3 ml-3 mt-4">Coming Soon</h1>
-
-          <div>
-            <client-only>
-              <flip-countdown :deadline="deadlineDate" />
-            </client-only>
-          </div>
-        </div>
-        <div class="col-md-6 col-12">
-          <div class="card offset-md-2 offset-0 col-md-6 col-12">
-            <div class="card-body text-center">
-              <h2 class="card-title display-4">Newsletter</h2>
-
-              <form class>
-                <div class data-validate="Valid email is required: ex@abc.xyz">
-                  <base-input
-                    v-model="email"
-                    class="input100 placeholder0 s1-txt1"
-                    type="text"
-                    name="_replyto"
-                    placeholder="Email"
-                  />
-                  <span class="focus-input100" />
-                </div>
-
-                <button class="btn btn-secondary" type="submit" @click="subscribe">Subscribe</button>
-              </form>
-              <!-- <form >
-                <input type="text" clas name="name" />
-                <input type="email" name="_replyto" />
-                <input type="submit" value="Send" />
-              </form>-->
-              <div>
-                <div class="card-text small text-muted mt-3">And don’t worry, we hate spam too!</div>
-                <div class="card-text small text-muted">You can unsubcribe at anytime.</div>
-              </div>
-            </div>
-          </div>
+          <h2 class="text-white display-3 ml-3 mt-4">We support companies who create products that matter.</h1>
+          <div>Email us: georgi@kirilovconsult.com</div>
         </div>
       </div>
     </div>
@@ -69,13 +33,8 @@
 </template>
 
 <script>
-import FlipCountdown from 'vue2-flip-countdown';
 
 export default {
-  name: 'NuxtError',
-  components: {
-    FlipCountdown
-  },
   layout(context) {
     return 'header';
   },
@@ -133,6 +92,9 @@ export default {
 }
 .logo {
   width: 100px;
+}
+.logo-text {
+  max-width: 250px;
 }
 .navbar {
   background-color: transparent;
