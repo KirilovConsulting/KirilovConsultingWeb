@@ -24,8 +24,8 @@
 
       <div class="row text-center content d-flex justify-content-center">
         <div class="col-12 col-md-6 mb-5 pb-5">
-          <h2 class="text-white display-3 ml-3 mt-4">We support companies who create products that matter.</h1>
-          <div>Email us: georgi@kirilovconsult.com</div>
+          <h1 class="text-white display-1 ml-3 mt-4">We support companies who create products that matter.</h1>
+          <div class="display-4">Email us: <a href="mailto:georgi@kirilovconsult.com">georgi@kirilovconsult.com</div>
         </div>
       </div>
     </div>
