@@ -23,9 +23,12 @@
       </div>
 
       <div class="row text-center content d-flex justify-content-center">
-        <div class="col-12 col-md-6 mb-5 pb-5">
+        <div class="col-6 col-md-6 mb-5 pb-5">
           <h1 class="text-white display-1 ml-3 mt-4">Supporting companies and products that matter.</h1>
           <div class="display-4"><a class="text-white" href="mailto:georgi@kirilovconsult.com">georgi@kirilovconsult.com</div>
+        </div>
+        <div class="col-6 col-md-6 mb-5 pb-5">
+          <iframe src="https://v1.embednotion.com/embed/260cc3ce2a1240c59a1c0c5919dd2c36"></iframe>  <style>  iframe { width: 100%; height: 500px; border: 2px solid #ccc; border-radius: 10px; padding: none; }  </style>
         </div>
       </div>
     </div>
