@@ -21,7 +21,7 @@
       </div>
 
       <div class="row text-center content d-flex justify-content-center">
-        <div class="col-6 col-md-6 mb-5 pb-5">
+        <div class="col-md-6 mb-5 pb-5">
           <div class="row">
             <div class="col-12">
               <h1 class="text-white display-1 ml-3 mt-4">
